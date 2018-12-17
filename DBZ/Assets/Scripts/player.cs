@@ -37,10 +37,17 @@ public class player : MonoBehaviour {
 		if(Input.GetKeyDown (KeyCode.UpArrow) && !jumped && !onFloor) {
 			Jump();
 		}
+		if(Input.GetKeyDown(KeyCode.S)) {
+			ScoreTest();
+		}
 
 	}
 
 	public void Jump () {
 		_player.velocity = new Vector2 (_player.velocity.x, jumpPower);
+	}
+
+	public void ScoreTest() {
+		scoreboard.updatedScore += 1;
 	}
 }
